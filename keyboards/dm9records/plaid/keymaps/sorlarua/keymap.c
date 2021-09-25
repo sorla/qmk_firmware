@@ -1,5 +1,6 @@
 #include QMK_KEYBOARD_H
 #include "keymap_uk.h"
+#include "g/keymap_combo.h"
 
 /* #define A_GUI GUI_T(KC_A)
 #define R_ALTT ALT_T(KC_R)
@@ -25,8 +26,12 @@
 #define OS_GUI OSM(MOD_LGUI)
 #define OS_RAL OSM(MOD_RALT)
 
-bool is_alt_tab_active = false; // ADD this near the begining of keymap.c
-uint16_t alt_tab_timer = 0;     // we will be using them soon.
+#define TM_QUIT C(S(KC_B))
+#define TM_MUTE C(S(KC_M))
+#define TM_HAND C(S(KC_K))
+// Set up for alt-tab macro
+bool is_alt_tab_active = false;
+uint16_t alt_tab_timer = 0;
 
  enum plaid_layers {
 	 _COLEMAK,
@@ -49,16 +54,16 @@ uint16_t alt_tab_timer = 0;     // we will be using them soon.
 	 FUNCTION,
 	 MOUSE,
 	 ADJUST,
-	 ALT_TAB
+	 ALT_TAB,
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_COLEMAK] = LAYOUT_plaid_grid(
-	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, _______, _______,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
-		  KC_A,    KC_R,   KC_S,    KC_T,    KC_G,  KC_EQL, _______,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
-		  KC_Z,    KC_X,   KC_C,    KC_D,    KC_V, _______, _______,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
-		OS_CTL, KC_LGUI, OS_SFT, DEL_FUN, BSP_NUM, ESC_SYM, TAB_ADJ, SPC_NAV, ENT_MOS, UK_BSLS, GO_NUMS, UK_HASH),
+	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, _______, TM_QUIT,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
+		  KC_A,    KC_R,   KC_S,    KC_T,    KC_G,  KC_EQL, TM_MUTE,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
+		  KC_Z,    KC_X,   KC_C,    KC_D,    KC_V, _______, TM_HAND,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
+		OS_CTL, KC_LGUI, KC_EQL, DEL_FUN, BSP_NUM, ESC_SYM, TAB_ADJ, SPC_NAV, ENT_MOS, UK_BSLS, GO_NUMS, UK_HASH),
 
 	[_QWERTY] = LAYOUT_plaid_grid(
 		KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL,
@@ -120,6 +125,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			  break;
 
 		  }
+
     return true;
 };
 
