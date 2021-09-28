@@ -13,12 +13,12 @@
 
 #define GO_HOME TO(_COLEMAK)
 #define GO_NUMS TO(_NUMBERS)
-#define ESC_SYM LT(_SYMS, KC_ESC)
+#define ESC_CTL MT(MOD_LCTL,KC_ESC)
 #define BSP_NUM LT(_NUMBERS,KC_BSPC)
 #define DEL_FUN LT(_FUNCTION,KC_DEL)
 #define SPC_NAV LT(_NAV,KC_SPC)
 #define ENT_MOS LT(_MOUSE,KC_ENT)
-#define TAB_ADJ LT(_ADJUST,KC_TAB)
+#define TAB_ALT MT(MOD_LALT,KC_TAB)
 
 #define OS_CTL OSM(MOD_LCTL)
 #define OS_SFT OSM(MOD_LSFT)
@@ -50,10 +50,8 @@ uint16_t alt_tab_timer = 0;
 	 _QWERTY,
 	 _NAV,
 	 _NUMBERS,
-	 _SYMS,
 	 _FUNCTION,
 	 _MOUSE,
-	 _ADJUST,
      _FROG,
      _FSYM,
      _FNUM,
@@ -79,13 +77,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, _______, TM_QUIT,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
 		  KC_A,    KC_R,   KC_S,    KC_T,    KC_G,  KC_EQL, TM_MUTE,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
 		  KC_Z,    KC_X,   KC_C,    KC_D,    KC_V, _______, TM_HAND,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
-		OS_CTL, KC_LGUI, KC_EQL, DEL_FUN, BSP_NUM, ESC_SYM, TAB_ADJ, SPC_NAV, ENT_MOS, UK_BSLS, GO_NUMS, UK_HASH),
+		OS_CTL, KC_LGUI, KC_EQL, DEL_FUN, BSP_NUM, ESC_CTL, TAB_ALT, SPC_NAV, ENT_MOS, UK_BSLS, GO_NUMS, UK_HASH),
 
 	[_QWERTY] = LAYOUT_plaid_grid(
-		KC_TAB, KC_Q, KC_W, KC_E, KC_R, KC_T, KC_Y, KC_U, KC_I, KC_O, KC_P, KC_DEL,
-        KC_ESC, KC_A, KC_S, KC_D, KC_F, KC_G, KC_H, KC_J, KC_K, KC_L, KC_SCLN, KC_QUOT,
-		KC_LSFT, LT(6,KC_Z), KC_X, KC_C, KC_V, KC_B, KC_N, KC_M, KC_COMM, KC_DOT, KC_SLSH, KC_ENT,
-		KC_LCTL, KC_RALT, KC_LALT, KC_LGUI, MO(_NUMBERS), KC_BSPC, KC_SPC, MO(_SYMS), KC_LEFT, KC_DOWN, KC_UP, KC_RGHT
+		 KC_TAB,       KC_Q,    KC_W,    KC_E,    KC_R,    KC_T,    KC_Y,    KC_U,    KC_I,    KC_O,    KC_P,  KC_DEL,
+         KC_ESC,       KC_A,    KC_S,    KC_D,    KC_F,    KC_G,    KC_H,    KC_J,    KC_K,    KC_L, KC_SCLN, KC_QUOT,
+		KC_LSFT, LT(6,KC_Z),    KC_X,    KC_C,    KC_V,    KC_B,    KC_N,    KC_M, KC_COMM,  KC_DOT, KC_SLSH,  KC_ENT,
+		KC_LCTL,    KC_RALT, KC_LALT, KC_LGUI, DEL_FUN, BSP_NUM, SPC_NAV, ENT_MOS, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT
         ),
 
 	[_NAV] = LAYOUT_plaid_grid(
@@ -102,18 +100,11 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		_______, _______, _______, _______, _______, _______,  KC_TAB,    KC_0, KC_ENT, _______, GO_HOME, KC_BSPC
         ),
 
-	[_SYMS] = LAYOUT_plaid_grid(
-		KC_TILD   ,   KC_LT,  KC_EQL,   KC_GT, KC_CIRC, _______, _______, KC_LBRC, KC_RBRC, KC_NUHS,   UK_AT, KC_COLN,
-		KC_DLR    , UK_DQUO, KC_UNDS, KC_MINS, KC_PLUS, _______, _______, KC_LPRN, KC_RPRN, KC_EXLM, KC_PERC,  UK_PND,
-		ALGR(KC_4), UK_BSLS, UK_PIPE, KC_SLSH, KC_ASTR, _______, _______, KC_LCBR, KC_RCBR, KC_SCLN, KC_COLN, KC_AMPR,
-		   _______, _______, _______, _______, _______, _______, _______, _______, _______, _______, GO_HOME, _______
-        ),
-
 	[_FUNCTION] = LAYOUT_plaid_grid(
-		_______, DM_RSTP, DM_PLY1, DM_PLY2, DM_REC1, _______, _______,  KC_F14,   KC_F5,   KC_F6,   KC_F7,   KC_F8,
-		 OS_GUI,  OS_ALT,  OS_SFT,  OS_CTL, DM_REC2, _______, _______,  KC_F13,   KC_F1,   KC_F2,   KC_F3,   KC_F4,
-		_______, _______, _______, _______, _______, _______, _______,  KC_F15,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
-		_______, _______, _______, _______, _______, _______, _______, _______, _______, _______, GO_HOME, _______
+		    _______,      DM_RSTP,   DM_PLY1, DM_PLY2, DM_REC1,   RESET, _______,  KC_F14,   KC_F5,   KC_F6,   KC_F7,   KC_F8,
+		     OS_GUI,       OS_ALT,    OS_SFT,  OS_CTL, DM_REC2, _______, _______,  KC_F13,   KC_F1,   KC_F2,   KC_F3,   KC_F4,
+		DF(_QWERTY), DF(_COLEMAK), TO(_FROG), _______, _______, _______, _______,  KC_F15,   KC_F9,  KC_F10,  KC_F11,  KC_F12,
+		    _______,      _______,   _______, _______, _______, _______, _______, _______, _______, _______, GO_HOME, _______
         ),
 
 	[_MOUSE] = LAYOUT_plaid_grid(
@@ -121,13 +112,6 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		_______, KC_MS_L, KC_MS_D, KC_MS_R, KC_WH_D, _______, _______, KC_BTN4, KC_RCTL, KC_RSFT, KC_LALT, KC_RGUI,
 		_______,   KC_NO,  	KC_NO,   KC_NO,   KC_NO, _______, _______, _______, _______, _______, _______, _______,
 		_______, _______, _______, KC_BTN2, KC_BTN1, KC_BTN3, _______, _______, _______, _______, GO_HOME, _______
-        ),
-
-	[_ADJUST] = LAYOUT_plaid_grid(
-		  RESET,   KC_NO,   KC_NO,   KC_NO,   KC_NO, _______,   KC_NO,       KC_NO,        KC_NO,     KC_NO,   KC_NO,  KC_DEL,
-		_______, _______,  MU_MOD,   AU_ON,  AU_OFF, AG_NORM, AG_SWAP, DF(_QWERTY), DF(_COLEMAK), TO(_FROG),   KC_NO, _______,
-		_______, _______,  MUV_DE,  MUV_IN,   MU_ON,  MU_OFF,   MI_ON,      MI_OFF,      TERM_ON,  TERM_OFF, _______, _______,
-		_______, _______, KC_ASTG, KC_ASDN, KC_ASUP, KC_ASRP, _______,     _______,      _______,   _______, GO_HOME, _______
         ),
 
     [_FROG] = LAYOUT_plaid_grid(
@@ -194,7 +178,10 @@ void matrix_scan_user(void) {
             writePinHigh(LED_RED);
 			writePinLow(LED_GREEN);
             break;
-        case _SYMS:
+        case _FROG:
+        case _FSYM:
+        case _FNUM:
+        case _FEXT:
             writePinHigh(LED_GREEN);
 			writePinLow(LED_RED);
             break;
