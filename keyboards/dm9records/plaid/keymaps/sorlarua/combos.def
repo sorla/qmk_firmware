@@ -4,10 +4,9 @@ COMB(UY_RBRC, KC_RBRC, KC_U, KC_Y)
 COMB(LU_DQUO, UK_DQUO, KC_L, KC_U)
 COMB(NE_MINS, KC_MINS, KC_N, KC_E)
 COMB(EI_RPRN, KC_RPRN, KC_E, KC_I)
-COMB(IO_COLN, KC_COLN, KC_I, KC_O)
+COMB(IO_SCLN, KC_SCLN, KC_I, KC_O)
 COMB(HC_UNDS, KC_UNDS, KC_H, KC_COMM)
 COMB(CD_RCBR, KC_RCBR, KC_COMM, KC_DOT)
-COMB(DS_SCLN, KC_SCLN, KC_DOT, KC_SLSH)
 
 // Left hand
 COMB(WF_LBRC, KC_LBRC, KC_W, KC_F)
@@ -18,6 +17,19 @@ COMB(ST_EQL,  KC_EQL,  KC_S, KC_T)
 COMB(ZX_BPIP, ALGR(KC_GRV), KC_Z, KC_X)
 COMB(XC_LCBR, KC_LCBR, KC_X, KC_C)
 COMB(CD_HASH, UK_HASH, KC_C, KC_D)
+
+
+// String substitution
+SUBS(TM_temperature, "temperature", KC_T, KC_M)
+SUBS(EL_element, "element", KC_E, KC_L)
+SUBS(RY_resistivity, "resistivity", KC_R, KC_Y)
+SUBS(RN_resistance, "resistance", KC_R, KC_N)
+SUBS(MD_molybdenum, "molybdenum", KC_M, KC_D)
+SUBS(TD_tungsten, "tungsten", KC_T, KC_D)
+SUBS(CE_carbide, "carbide", KC_C, KC_E)
+SUBS(SC_SiC, "silicon carbide", KC_S, KC_C)
+SUBS(SI_silicon, "silicon", KC_S, KC_I)
+SUBS(RX_experiment, "experiment", KC_R, KC_X)
 
 
 // For FrogPad layer

@@ -27,7 +27,8 @@
 #define OS_RAL OSM(MOD_RALT)
 
 // Keys for FrogPad layout
-#define BSP_EXT LT(_FEXT,KC_BSPC)
+#define BS_NUM LT(_FNUM,KC_BSPC)
+#define SP_EX LT(_FEXT, KC_SPC)
 #define OSYM OSL(_FSYM)
 #define ONUM OSL(_FNUM)
 #define OSFT OSM(MOD_LSFT)
@@ -116,9 +117,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
     [_FROG] = LAYOUT_plaid_grid(
          KC_ESC,    KC_F,    KC_D,    KC_N,    KC_I,    KC_G,    KC_G,    KC_I,    KC_N,    KC_D,    KC_F,  KC_ESC,
-        BSP_EXT,    KC_S,    KC_T,    KC_H,    KC_E,    KC_O,    KC_O,    KC_E,    KC_H,    KC_T,    KC_S, BSP_EXT,
-           OSFT,    KC_C,    KC_W,    KC_R,    KC_A,    KC_U,    KC_U,    KC_A,    KC_R,    KC_W,    KC_C,    OSFT,
-        _______, _______, _______,    ONUM,    OSYM,  KC_SPC,  KC_SPC,    OSYM,    ONUM, _______, GO_HOME, _______
+         KC_TAB,    KC_S,    KC_T,    KC_H,    KC_E,    KC_O,    KC_O,    KC_E,    KC_H,    KC_T,    KC_S,  KC_TAB,
+         OS_CTL,    KC_C,    KC_W,    KC_R,    KC_A,    KC_U,    KC_U,    KC_A,    KC_R,    KC_W,    KC_C,  OS_CTL,
+        _______, _______, _______,    OSYM,  BS_NUM,   SP_EX,   SP_EX,  BS_NUM,    OSYM, _______, GO_HOME, _______
         ),
 
     [_FSYM] = LAYOUT_plaid_grid(
@@ -129,10 +130,10 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_FNUM] = LAYOUT_plaid_grid(
-       KC_EQL,    KC_6,    KC_7,    KC_8,    KC_9,  KC_DOT,  KC_DOT,    KC_9,    KC_8,    KC_7,    KC_6,  KC_EQL,
-      KC_PLUS,    KC_1,    KC_2,    KC_3,    KC_4,    KC_5,    KC_5,    KC_4,    KC_3,    KC_2,    KC_1, KC_PLUS,
-      KC_MINS, KC_HASH,  KC_DLR, KC_PERC,    KC_0, KC_COMM, KC_COMM,    KC_0, KC_PERC,  KC_DLR, KC_HASH, KC_MINS,
-      _______, _______, _______, XXXXXXX, XXXXXXX,    OGUI,    OGUI, XXXXXXX, XXXXXXX,_______, _______, _______
+       KC_EQL,    KC_8,    KC_7,    KC_6,    KC_5,  KC_DOT,  KC_DOT,    KC_5,    KC_6,    KC_7,    KC_8,  KC_EQL,
+       KC_EQL,    KC_4,    KC_3,    KC_2,    KC_1,    KC_5,    KC_5,    KC_1,    KC_2,    KC_3,    KC_4,  KC_EQL,
+      KC_MINS, KC_SLSH, KC_HASH,    KC_0,    KC_9, KC_COMM, KC_COMM,    KC_9,    KC_0, KC_HASH, KC_SLSH, KC_MINS,
+      _______, _______, _______, XXXXXXX, _______,    OGUI,    OGUI, XXXXXXX, XXXXXXX,_______, _______, _______
       ),
 
     [_FEXT] = LAYOUT_plaid_grid(
