@@ -70,6 +70,7 @@ uint16_t alt_tab_timer = 0;
 	 MOUSE,
 	 ADJUST,
 	 ALT_TAB,
+     STOP_CAP
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
@@ -158,6 +159,13 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 				unregister_code(KC_TAB);
 			  }
 			  break;
+
+        case STOP_CAP:
+			  if (record->event.pressed) {
+                  SEND_STRING(". ");
+                  set_oneshot_mods(MOD_MASK_SHIFT);
+              }
+              break;
 
 		  }
 

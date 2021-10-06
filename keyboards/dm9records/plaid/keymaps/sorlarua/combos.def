@@ -6,7 +6,7 @@ COMB(NE_MINS, KC_MINS, KC_N, KC_E)
 COMB(EI_RPRN, KC_RPRN, KC_E, KC_I)
 COMB(IO_SCLN, KC_SCLN, KC_I, KC_O)
 COMB(HC_UNDS, KC_UNDS, KC_H, KC_COMM)
-COMB(CD_RCBR, KC_RCBR, KC_COMM, KC_DOT)
+//COMB(CD_RCBR, KC_RCBR, KC_COMM, KC_DOT)
 
 // Left hand
 COMB(WF_LBRC, KC_LBRC, KC_W, KC_F)
@@ -15,7 +15,7 @@ COMB(AR_BSLS, UK_BSLS, KC_A, KC_R)
 COMB(RS_LPRN, KC_LPRN, KC_R, KC_S)
 COMB(ST_EQL,  KC_EQL,  KC_S, KC_T)
 COMB(ZX_BPIP, ALGR(KC_GRV), KC_Z, KC_X)
-COMB(XC_LCBR, KC_LCBR, KC_X, KC_C)
+// COMB(XC_LCBR, KC_LCBR, KC_X, KC_C)
 COMB(CD_HASH, UK_HASH, KC_C, KC_D)
 
 
@@ -32,20 +32,21 @@ SUBS(SI_silicon, "silicon", KC_S, KC_I)
 SUBS(RX_experiment, "experiment", KC_R, KC_X)
 
 
-// For FrogPad layer
-COMB(sy_combo,       KC_Y,         KC_S, KC_SPC)
-COMB(tp_combo,       KC_P,         KC_T, KC_SPC)
-COMB(hl_combo,       KC_L,         KC_H, KC_SPC)
-COMB(ed_combo,       KC_DOT,       KC_E, KC_SPC)
-COMB(oq_combo,       KC_Q,         KC_O, KC_SPC)
-COMB(fj_combo,       KC_J,         KC_F, KC_SPC)
-COMB(dk_combo,       KC_K,         KC_D, KC_SPC)
-COMB(nm_combo,       KC_M,         KC_N, KC_SPC)
-COMB(iq_combo,       KC_QUOT,      KC_I, KC_SPC)
-COMB(gm_combo,       KC_MINS,      KC_G, KC_SPC)
-COMB(cx_combo,       KC_X,         KC_C, KC_SPC)
-COMB(wb_combo,       KC_B,         KC_W, KC_SPC)
-COMB(rv_combo,       KC_V,         KC_R, KC_SPC)
-COMB(ac_combo,       KC_COMM,      KC_A, KC_SPC)
-COMB(uz_combo,       KC_Z,         KC_U, KC_SPC)
-COMB(ten_combo,      KC_ENT,       KC_ESC, KC_SPC)
+// Common words put on chords on the base layer
+SUBS(SPCT_the , "the ", KC_SPC, KC_T)
+SUBS(SPCN_and , "and ", KC_SPC, KC_N)
+SUBS(SPCF_of , "of ", KC_SPC, KC_F)
+SUBS(SPCD_to , "to ", KC_SPC, KC_D)
+SUBS(SPCS_is , "is ", KC_SPC, KC_S)
+SUBS(SPCE_in , "in", KC_SPC, KC_E)
+SUBS(SPCR_for , "for ", KC_SPC, KC_R)
+SUBS(SPCP_that , "that ", KC_SPC, KC_P)
+SUBS(SPCW_was , "was ", KC_SPC, KC_W)
+SUBS(SPCO_on , "on ", KC_SPC, KC_O)
+SUBS(SPCQ_with , "with ", KC_SPC, KC_Q)
+SUBS(SPCA_at , "at ", KC_SPC, KC_A)
+SUBS(SPCI_it , "it ", KC_SPC, KC_I)
+SUBS(SPCC_as , "as ", KC_SPC, KC_C) // 0.6% or so
+
+// Punctuation with one shot shift...
+// COMB(COMMDOT_CAP , STOP_CAP, KC_COMM, KC_DOT)
