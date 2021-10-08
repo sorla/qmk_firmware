@@ -70,13 +70,13 @@ uint16_t alt_tab_timer = 0;
 	 MOUSE,
 	 ADJUST,
 	 ALT_TAB,
-     STOP_CAP
+     STP_CAP
 };
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
 	[_COLEMAK] = LAYOUT_plaid_grid(
-	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, _______, TM_QUIT,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
+	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, STP_CAP, TM_QUIT,    KC_J,    KC_L,    KC_U,    KC_Y, KC_QUOT,
 		  KC_A,    KC_R,   KC_S,    KC_T,    KC_G,  KC_EQL, TM_MUTE,    KC_M,    KC_N,    KC_E,    KC_I,    KC_O,
 		  KC_Z,    KC_X,   KC_C,    KC_D,    KC_V, _______, TM_HAND,    KC_K,    KC_H, KC_COMM,  KC_DOT, KC_SLSH,
 		OS_CTL, KC_LGUI, KC_EQL, DEL_FUN, BSP_NUM, ESC_CTL, TAB_ALT, SPC_NAV, ENT_MOS, UK_BSLS, GO_NUMS, UK_HASH),
@@ -160,7 +160,7 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			  }
 			  break;
 
-        case STOP_CAP:
+        case STP_CAP:
 			  if (record->event.pressed) {
                   SEND_STRING(". ");
                   set_oneshot_mods(MOD_MASK_SHIFT);
