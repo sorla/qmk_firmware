@@ -1,0 +1,13 @@
+// String substitution
+SUBS(TM_temperature, "temperature", KC_T, KC_M)
+SUBS(EL_element, "element", KC_E, KC_L)
+SUBS(RY_resistivity, "resistivity", KC_R, KC_Y)
+SUBS(RN_resistance, "resistance", KC_R, KC_N)
+SUBS(MD_molybdenum, "molybdenum", KC_M, KC_D)
+SUBS(TD_tungsten, "tungsten", KC_T, KC_D)
+SUBS(CE_carbide, "carbide", KC_C, KC_E)
+SUBS(SC_SiC, "silicon carbide", KC_S, KC_C)
+SUBS(SL_silicon, "silicon", KC_S, KC_L)
+SUBS(RX_experiment, "experiment", KC_R, KC_X)
+SUBS(NX_extrusion, "extrusion", KC_N, KC_X)
+SUBS(DX_extrude, "extrude", KC_D, KC_X)

@@ -1,0 +1,7 @@
+// COMB|SUBS(name,  result,  keys)
+
+#include "simple_eng.def"
+#include "tech_words.def"
+#include "punctuation.def"
+#include "frogpad.def"
+#include "nav_combos.def"

@@ -14,8 +14,8 @@
 #define MATRIX_COLS 4
 
 /* pro_micro pin-out */
-#define MATRIX_ROW_PINS { B6, B2, D2, D3 }
-#define MATRIX_COL_PINS { E6, D7, B3, B1 }
+#define MATRIX_ROW_PINS { E6, D7, B3, B1 }
+#define MATRIX_COL_PINS { D3, D2, B2, B6 }
 #define UNUSED_PINS
 
 /* leds */
@@ -25,7 +25,7 @@
 #define QMK_LED B5
 
 /* COL2ROW or ROW2COL */
-#define DIODE_DIRECTION COL2ROW
+#define DIODE_DIRECTION ROW2COL
 
 /* Set 0 if debouncing isn't needed */
 #define DEBOUNCE 0

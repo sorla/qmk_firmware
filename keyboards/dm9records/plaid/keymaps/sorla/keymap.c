@@ -75,6 +75,7 @@ uint16_t alt_tab_timer = 0;
      ENT_CAP,
      QUES_CAP,
      EXCL_CAP,
+     QTY_OFF,
 };
 #include "g/keymap_combo.h"
 
@@ -101,9 +102,9 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ),
 
 	[_NUMBERS] = LAYOUT_plaid_grid(
-		_______, _______, _______, _______, _______, _______, _______, _______,   KC_7,    KC_8,    KC_9, KC_COLN,
+		_______, _______, QTY_OFF,    KC_X, _______, _______, _______, _______,   KC_7,    KC_8,    KC_9, KC_COLN,
 		 OS_GUI,  OS_ALT,  OS_SFT,  OS_CTL, _______, _______, _______,  KC_EQL,   KC_1,    KC_2,    KC_3,  KC_DOT,
-		_______,  OS_RAL, _______, _______, _______, _______, _______, KC_PLUS,   KC_4,    KC_5,    KC_6, _______,
+		_______,  OS_RAL, _______,    KC_M, _______, _______, _______, KC_PLUS,   KC_4,    KC_5,    KC_6, _______,
 		_______, _______, _______, _______, _______, _______,  KC_TAB,    KC_0, KC_ENT, _______, GO_HOME, KC_BSPC
         ),
 
@@ -122,8 +123,8 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
         ),
 
     [_FROG] = LAYOUT_plaid_grid( // possibly more combos on the home row for letters and layer switching
-         KC_ESC,    KC_F,    KC_D,    KC_N,    KC_I,    KC_G,    KC_G,    KC_I,    KC_N,    KC_D,    KC_F,  KC_ESC,
-         KC_TAB,    KC_S,    KC_T,    KC_H,    KC_E,    KC_O,    KC_O,    KC_E,    KC_H,    KC_T,    KC_S,  KC_TAB,
+         KC_TAB,    KC_F,    KC_D,    KC_N,    KC_I,    KC_G,    KC_G,    KC_I,    KC_N,    KC_D,    KC_F,  KC_TAB,
+         KC_ENT,    KC_S,    KC_T,    KC_H,    KC_E,    KC_O,    KC_O,    KC_E,    KC_H,    KC_T,    KC_S,  KC_ENT,
          OS_CTL,    KC_C,    KC_W,    KC_R,    KC_A,    KC_U,    KC_U,    KC_A,    KC_R,    KC_W,    KC_C,  OS_CTL,
         _______, _______, _______,    OSYM,  BS_NUM,   SP_EX,   SP_EX,  BS_NUM,    OSYM, _______, GO_HOME, _______
         ),
@@ -136,16 +137,16 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
     ),
 
     [_FNUM] = LAYOUT_plaid_grid(  // Re-arrange to numpad with 1-3 on home row
-       KC_EQL,    KC_8,    KC_9,    KC_8,    KC_7,  KC_DOT,  KC_DOT,    KC_5,    KC_6,    KC_7,    KC_8,  KC_EQL,
-       KC_EQL,  KC_DOT,    KC_3,    KC_2,    KC_1,    KC_0,    KC_5,    KC_1,    KC_2,    KC_3,    KC_4,  KC_EQL,
-      KC_MINS, KC_SLSH,    KC_6,    KC_5,    KC_4, KC_COMM, KC_COMM,    KC_9,    KC_0, KC_HASH, KC_SLSH, KC_MINS,
+       KC_EQL,    KC_8,    KC_9,    KC_8,    KC_7,  KC_DOT,  KC_DOT,    KC_7,    KC_8,    KC_9,    KC_8,  KC_EQL,
+       KC_EQL,  KC_DOT,    KC_3,    KC_2,    KC_1,    KC_0,    KC_0,    KC_1,    KC_2,    KC_3,    KC_4,  KC_EQL,
+      KC_MINS, KC_SLSH,    KC_6,    KC_5,    KC_4, KC_COMM, KC_COMM,    KC_4,    KC_5,    KC_6, KC_SLSH, KC_MINS,
       _______, _______, _______, XXXXXXX, _______,    OGUI,    OGUI, XXXXXXX, XXXXXXX,_______, _______, _______
       ),
 // TODO add in a function layer
     [_FEXT] = LAYOUT_plaid_grid(// make this match the main layers layout of the arrows at least
-      XXXXXXX, KC_WBAK, KC_HOME,   KC_UP,  KC_END, KC_WFWD, KC_WFWD, KC_HOME,   KC_UP,  KC_END, KC_WBAK, XXXXXXX,
-      XXXXXXX,    ATAB, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,  KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT,    ATAB, XXXXXXX,
-      XXXXXXX, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),    OALT,    OALT, C(KC_V), C(KC_C), C(KC_X), C(KC_Z), XXXXXXX,
+      XXXXXXX,  KC_ESC, KC_HOME,   KC_UP,  KC_END, KC_PGUP, KC_PGUP, KC_HOME,   KC_UP,  KC_END,  KC_ESC, XXXXXXX,
+         ATAB,  KC_DEL, KC_LEFT, KC_DOWN, KC_RGHT, KC_PGDN, KC_PGDN, KC_LEFT, KC_DOWN, KC_RGHT,  KC_DEL,    ATAB,
+         OGUI, C(KC_Z), C(KC_X), C(KC_C), C(KC_V),    OALT,    OALT, C(KC_V), C(KC_C), C(KC_X), C(KC_Z),    OGUI,
       _______, _______, _______,    OSFT,    OCTL,    CBSP,    CBSP,    OCTL,    OSFT, _______, _______, _______
     )
 };
@@ -190,6 +191,12 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
 			  if (record->event.pressed) {
                   SEND_STRING("! ");
                   set_oneshot_mods(MOD_MASK_SHIFT);
+              }
+              break;
+
+        case QTY_OFF:
+			  if (record->event.pressed) {
+                  SEND_STRING("off");
               }
               break;
 
