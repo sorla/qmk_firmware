@@ -17,6 +17,7 @@ SUBS(CD_ARROW, " -> ", KC_C, KC_D)
 
 // Num layer
 COMB(O2_MINS, KC_MINS, KC_1, KC_2)
+COMB(O3_COLN, KC_COLN, KC_1, KC_3)
 
 // Punctuation with one shot shift...
 COMB(BSPSPC_CAP , STP_CAP, BSP_NUM, SPC_NAV)
