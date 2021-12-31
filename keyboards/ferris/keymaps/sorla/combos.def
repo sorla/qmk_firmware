@@ -1,0 +1,80 @@
+// Go to maths layer from base
+COMB(IO_MATHS, GO_MATHS, KC_I, KC_O)
+
+// Home row left hand backspace word and delete
+COMB(BSPS_CBSP, C(KC_BSPC), BSP_NAV, KC_S)
+COMB(BSPR_DEL, KC_DEL, BSP_NAV, KC_R)
+// TAB and CAPS on right hand
+COMB(SPCE_TAB, KC_TAB, SPC_NUM, KC_E)
+COMB(SPCI_CAPS, KC_CAPS, SPC_NUM, KC_I)
+
+// Punctuation
+// Maybe add options for some extras on base - "&*!$%^£" are all that are missing, and vertically aligned keys are options now
+// Right hand
+COMB(UY_RBRC, KC_RBRC, KC_U, KC_Y)
+COMB(LU_DQUO, UK_DQUO, KC_L, KC_U)
+COMB(NE_MINS, KC_MINS, KC_N, KC_E)
+COMB(EI_RPRN, KC_RPRN, KC_E, KC_I)
+COMB(NI_SCLN, KC_SCLN, KC_I, KC_N)
+COMB(HC_HASH, UK_HASH, KC_H, KC_COMM)
+
+// Left hand
+COMB(WF_LBRC, KC_LBRC, KC_W, KC_F)
+COMB(FP_GRV,  KC_GRV,  KC_F, KC_P)
+COMB(RT_BSLS, UK_BSLS, KC_R, KC_T)
+COMB(RS_LPRN, KC_LPRN, KC_R, KC_S)
+COMB(ST_EQL,  KC_EQL,  KC_S, KC_T)
+COMB(ZX_BPIP, ALGR(KC_GRV), KC_Z, KC_X)
+SUBS(CD_ARROW, " -> ", KC_C, KC_D)  // make a shifted version that does => on hold
+
+// Num layer
+COMB(O2_MINS, KC_MINS, KC_1, KC_2)
+COMB(O3_COLN, KC_COLN, KC_1, KC_3)
+
+// Punctuation with one shot shift...
+COMB(BSPSPC_CAP , STP_CAP, BSP_NAV, SPC_NUM)
+
+
+// Common words put on chords on the base layer
+SUBS(SPCA_are, "are ", SPC_NUM, KC_A)
+SUBS(SPCR_was, "was ", SPC_NUM, KC_R)
+SUBS(SPCS_of, "of ", SPC_NUM, KC_S)
+SUBS(SPCT_the, "the ", SPC_NUM, KC_T)
+SUBS(SPCQ_will, "will ", SPC_NUM, KC_Q)
+SUBS(SPCW_with, "with ", SPC_NUM, KC_W)
+SUBS(SPCF_for, "for ", SPC_NUM, KC_F)
+SUBS(SPCP_to, "to ", SPC_NUM, KC_P)
+SUBS(SPCX_these, "these ", SPC_NUM, KC_X)
+SUBS(SPCZ_those, "those ", SPC_NUM, KC_Z)
+SUBS(SPCC_this, "this ", SPC_NUM, KC_C)
+SUBS(SPCD_that, "that ", SPC_NUM, KC_D)
+SUBS(SPCT_because, "because ", SPC_NUM, KC_B)
+SUBS(SPCG_were, "were ", SPC_NUM, KC_G)
+SUBS(SPCV_differen, "differen", SPC_NUM, KC_V)
+
+SUBS(BSPN_and, "and ", BSP_NAV, KC_N)
+SUBS(BSPE_in, "in ", BSP_NAV, KC_E)
+SUBS(BSPI_by, "by ", BSP_NAV, KC_I)
+SUBS(BSPO_be, "be ", BSP_NAV, KC_O)
+SUBS(BSPL_from, "from ", BSP_NAV, KC_L)
+SUBS(BSPU_but, "but ", BSP_NAV, KC_U)
+SUBS(BSPY_you, "you ", BSP_NAV, KC_Y)
+SUBS(BSPQUOT_ould, "ould", BSP_NAV, KC_QUOT)
+SUBS(BSPH_have, "have ", BSP_NAV, KC_H)
+SUBS(BSPCOMM_has, "has ", BSP_NAV, KC_COMM)
+SUBS(BSPCOMM_had, "had ", BSP_NAV, KC_DOT)
+SUBS(BSPM_here, "here ", BSP_NAV, KC_M)
+SUBS(BSPK_our, "our ", BSP_NAV, KC_K)
+
+SUBS(IS_is , "is ", KC_I, KC_S)
+SUBS(ON_on , "on ", KC_N, KC_O)
+SUBS(AT_at , "at ", KC_T, KC_A)
+SUBS(IT_it , "it ", KC_T, KC_I)
+SUBS(AS_as , "as ", KC_A, KC_S) // 0.6% or so
+SUBS(NT_not, "not ", KC_N, KC_T)
+SUBS(PL_please, "please ", KC_P, KC_L)
+SUBS(SE_ing, "ing ", KC_S, KC_E)
+SUBS(DH_tion, "tion ", KC_D, KC_H)
+SUBS(RI_ment, "ment ", KC_R, KC_I)
+
+// Once these are all ok, adding some work related words and programming symbols (return, each, import, class and any finicky punctuation) will be nice
