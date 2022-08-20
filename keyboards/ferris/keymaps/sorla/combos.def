@@ -3,10 +3,12 @@ COMB(NEI_MATHS, GO_MATHS, KC_N, KC_E, KC_I)
 COMB(RST_NAV, TG_NAV, KC_R, KC_S, KC_T)
 COMB(CD_FUN, MO_FUN, KC_C, KC_D)
 COMB(XC_MOUS, TG_MOUS, KC_X, KC_C)
+COMB(a137_HOME, GO_HOME, KC_1, KC_3, KC_7)
+COMB(a206_HOME, TG_NAV, KC_2, KC_0, KC_6)
 
 // Home row left hand backspace word and delete
-COMB(BSPS_CBSP, C(KC_BSPC), BSP_ALT, KC_S)
-COMB(BSPR_DEL, KC_DEL, BSP_ALT, KC_R)
+COMB(BSPS_CBSP, C(KC_BSPC), BSP_SFT, KC_S)
+COMB(BSPR_DEL, KC_DEL, BSP_SFT, KC_R)
 // TAB and CAPS on right hand
 COMB(SPCE_TAB, KC_TAB, SPC_CTL, KC_E)
 COMB(SPCI_CAPS, KC_CAPS, KC_J, KC_L)
@@ -42,10 +44,10 @@ COMB(O2_MINS, KC_MINS, KC_1, KC_2)
 COMB(O3_COLN, KC_COLN, KC_1, KC_3)
 
 // Punctuation with one shot shift...
-COMB(BSPSPC_CAP , STP_CAP, BSP_ALT, SPC_CTL)
-
+COMB(BSPSPC_CAP , STP_CAP, BSP_SFT, SPC_CTL)
 
 // Common words put on chords on the base layer
+// Space + Left hand
 SUBS(SPCA_are, "are ", SPC_CTL, KC_A)
 SUBS(SPCR_was, "was ", SPC_CTL, KC_R)
 SUBS(SPCS_of, "of ", SPC_CTL, KC_S)
@@ -61,20 +63,47 @@ SUBS(SPCD_that, "that ", SPC_CTL, KC_D)
 SUBS(SPCT_because, "because ", SPC_CTL, KC_B)
 SUBS(SPCG_were, "were ", SPC_CTL, KC_G)
 SUBS(SPCV_differen, "differen", SPC_CTL, KC_V)
+SUBS(SPCTP_they, "they ", SPC_CTL, KC_T, KC_P)
+SUBS(SPCTD_than, "than ", SPC_CTL, KC_T, KC_D)
+SUBS(SPCTG_temp, "temperature ", SPC_CTL, KC_T, KC_G)
+SUBS(SPCWR_between, "between ", SPC_CTL, KC_W, KC_R)
+SUBS(SPCRX_extru, "extru", SPC_CTL, KC_X, KC_R)
+SUBS(SPCFS_well, "well ", SPC_CTL, KC_F, KC_S)
+SUBS(SPCCS_which, "which ", SPC_CTL, KC_C, KC_S)
 
-SUBS(BSPN_and, "and ", BSP_ALT, KC_N)
-SUBS(BSPE_in, "in ", BSP_ALT, KC_E)
-SUBS(BSPI_by, "by ", BSP_ALT, KC_I)
-SUBS(BSPO_be, "be ", BSP_ALT, KC_O)
-SUBS(BSPL_from, "from ", BSP_ALT, KC_L)
-SUBS(BSPU_but, "but ", BSP_ALT, KC_U)
-SUBS(BSPY_you, "you ", BSP_ALT, KC_Y)
-SUBS(BSPQUOT_ould, "ould", BSP_ALT, KC_QUOT)
-SUBS(BSPH_have, "have ", BSP_ALT, KC_H)
-SUBS(BSPCOMM_has, "has ", BSP_ALT, KC_COMM)
-SUBS(BSPCOMM_had, "had ", BSP_ALT, KC_DOT)
-SUBS(BSPM_here, "here ", BSP_ALT, KC_M)
-SUBS(BSPK_our, "our ", BSP_ALT, KC_K)
+// Space + Right hand
+SUBS(SPCN_ing, "ing ", SPC_CTL, KC_N)
+SUBS(SPCM_ment, "ment ", SPC_CTL, KC_M)
+SUBS(SPCI_tion, "tion ", SPC_CTL, KC_I)
+SUBS(SPCO_nt, "n't ", SPC_CTL, KC_O)
+
+// Bsp + Right Hand
+SUBS(BSPN_and, "and ", BSP_SFT, KC_N)
+SUBS(BSPE_in, "in ", BSP_SFT, KC_E)
+SUBS(BSPI_by, "by ", BSP_SFT, KC_I)
+SUBS(BSPO_be, "be ", BSP_SFT, KC_O)
+SUBS(BSPL_from, "from ", BSP_SFT, KC_L)
+SUBS(BSPU_but, "but ", BSP_SFT, KC_U)
+SUBS(BSPY_you, "you ", BSP_SFT, KC_Y)
+SUBS(BSPQUOT_ould, "ould ", BSP_SFT, KC_QUOT)
+SUBS(BSPH_have, "have ", BSP_SFT, KC_H)
+SUBS(BSPCOMM_has, "has ", BSP_SFT, KC_COMM)
+SUBS(BSPCOMM_had, "had ", BSP_SFT, KC_DOT)
+SUBS(BSPM_here, "here ", BSP_SFT, KC_M)
+SUBS(BSPK_our, "our ", BSP_SFT, KC_K)
+SUBS(BSPJ_please, "please ", BSP_SFT, KC_J)
+SUBS(BSPNH_not, "not ", BSP_SFT, KC_N, KC_H)
+SUBS(BSPJL_project, "project ", BSP_SFT, KC_J, KC_L)
+SUBS(BSPNM_example, "example ", BSP_SFT, KC_N, KC_M)
+SUBS(BSPIO_been, "been ", BSP_SFT, KC_I, KC_O)
+SUBS(BSPNL_just, "just ", BSP_SFT, KC_N, KC_L)
+SUBS(BSPEY_able, "able ", BSP_SFT, KC_E, KC_U)
+
+// Bsp & Left hand (Teams and things)
+COMB(BSP_SFTT_M, RCS(KC_M), BSP_SFT, KC_T) //mute
+COMB(BSP_SFTG_K, RCS(KC_K), BSP_SFT, KC_G) //hand
+COMB(BSP_SFTD_H, RCS(KC_H), BSP_SFT, KC_D) //hangup
+
 
 /* Turning these off, but will redefine on new non-homerow things that are often triggered
 SUBS(IS_is , "is ", KC_I, KC_S)
@@ -82,10 +111,5 @@ SUBS(ON_on , "on ", KC_N, KC_O)
 SUBS(AT_at , "at ", KC_T, KC_A)
 SUBS(IT_it , "it ", KC_T, KC_I)
 SUBS(AS_as , "as ", KC_A, KC_S) // 0.6% or so
-SUBS(NT_not, "not ", KC_N, KC_T)
-SUBS(PL_please, "please ", KC_P, KC_L)
-SUBS(SE_ing, "ing ", KC_S, KC_E)
-SUBS(DH_tion, "tion ", KC_D, KC_H)
-SUBS(RI_ment, "ment ", KC_R, KC_I)
 */
 // Once these are all ok, adding some work related words and programming symbols (return, each, import, class and any finicky punctuation) will be nice
