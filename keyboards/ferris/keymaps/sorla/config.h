@@ -4,7 +4,7 @@
 #define AUTO_SHIFT_TIMEOUT 150
 
 #define COMBO_TERM 45
-#define TAPPING_TOGGLE 1
+#define TAPPING_TOGGLE 2
 
 
 // Set the mouse settings to a comfortable speed/accuracy trade-off,

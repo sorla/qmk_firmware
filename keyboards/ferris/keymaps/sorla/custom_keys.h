@@ -17,11 +17,9 @@
 #define GO_MATHS TO(_MATHS)
 #define GO_NAV TO(_NAV)
 
-#define TG_NUMS TT(_MATHS)
-#define TG_NAV  TT(_NAV)
+
 #define MO_FUN  MO(_FUNCTION)
-#define TG_MOUS TT(_MOUSE)
-#define TO_MOUS TO(_MOUSE)
+#define GO_MOUS TO(_MOUSE)
 
 #define ESC_ALT MT(MOD_LALT,KC_ESC)
 #define BSP_SFT MT(MOD_LSFT,KC_BSPC)

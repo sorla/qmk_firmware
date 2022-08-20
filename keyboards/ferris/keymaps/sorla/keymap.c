@@ -21,12 +21,12 @@ enum ferris_keycodes {
     QTY_OFF,
 };
 
-// All the combo magic
-#include "g/keymap_combo.h"
-
 // Set up for alt-tab macro
 bool is_alt_tab_active = false;
 uint16_t alt_tab_timer = 0;
+
+// All the combo magic
+#include "g/keymap_combo.h"
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 
