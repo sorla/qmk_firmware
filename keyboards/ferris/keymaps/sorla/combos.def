@@ -1,43 +1,51 @@
 // Layer controls
-COMB(NEI_MATHS, GO_MATHS, KC_N, KC_E, KC_I)
-COMB(RST_NAV, TG_NAV, KC_R, KC_S, KC_T)
+// From HOME
+COMB(NM_MATHS, GO_MATHS, KC_N, KC_M)
+COMB(TG_NAV, GO_NAV, KC_T, KC_G)
 COMB(CD_FUN, MO_FUN, KC_C, KC_D)
-COMB(XC_MOUS, TG_MOUS, KC_X, KC_C)
-COMB(a137_HOME, GO_HOME, KC_1, KC_3, KC_7)
-COMB(a206_HOME, TG_NAV, KC_2, KC_0, KC_6)
+COMB(XC_MOUS, GO_MOUS, KC_X, KC_C)
+
+// From MATHS to NAV
+COMB(G0_GO_NAV, KC_GO_NAV, KC_G, KC_0)
+
+// From NAV to MATHS
+COMB(PSCRLEFT_GO_MATHS, KC_GO_MATHS, KC_PSCR, KC_LEFT)
 
 // Home row left hand backspace word and delete
-COMB(BSPS_CBSP, C(KC_BSPC), BSP_SFT, KC_S)
-COMB(BSPR_DEL, KC_DEL, BSP_SFT, KC_R)
-// TAB and CAPS on right hand
-COMB(SPCE_TAB, KC_TAB, SPC_CTL, KC_E)
+COMB(BSPSS_CBSP, C(KC_BSPC), BSP_SFT, KC_S)
+COMB(BSPST_CDEL, C(KC_DEL), BSP_SFT, KC_T)
+// CAPS on right hand
 COMB(SPCI_CAPS, KC_CAPS, KC_J, KC_L)
 
 // Punctuation
 // Right hand
+COMB(UE_1, KC_1, KC_U, KC_E)
+COMB(LN_3, KC_3, KC_L, KC_N)
+COMB(NH_5, KC_5, KC_N, KC_H)
+COMB(YI_7, KC_7, KC_Y, KC_I)
+COMB(OQUOT_9, KC_9, KC_O, KC_QUOT)
+
 COMB(UY_RBRC, KC_RBRC, KC_U, KC_Y)
 COMB(LU_TAB, KC_TAB, KC_L, KC_U)
-COMB(NM_MINS, KC_MINS, KC_N, KC_M)
-COMB(LN_ASTR, KC_ASTR, KC_L, KC_N)
-COMB(UE_EXLM, KC_EXLM, KC_U, KC_E)
-COMB(YI_AMPR, KC_AMPR, KC_Y, KC_I)
-COMB(NH_PERC, KC_PERC, KC_N, KC_H)
 COMB(ECOMM_RPRN, KC_RPRN, KC_E, KC_COMM)
-COMB(IDOT_COLN, KC_COLN, KC_I, KC_DOT)
+COMB(IDOT_MINS, KC_MINS, KC_I, KC_DOT)
+COMB(OSLSH_GRV, KC_GRV, KC_O, KC_SLSH)
 COMB(COMMDOT_SCLN, KC_SCLN, KC_COMM, KC_DOT)
-COMB(KH_HASH, UK_HASH, KC_H, KC_K)
+COMB(HCOMM_HASH, UK_HASH, KC_H, KC_COMM)
 
 // Left hand
+COMB(PT_0, KC_0, KC_P, KC_T)
+COMB(FS_2, KC_2, KC_F, KC_S)
+COMB(TD_4, KC_4, KC_T, KC_D)
+COMB(WR_6, KC_6, KC_W, KC_R)
+COMB(AQ_8, KC_8, KC_A, KC_Q)
+
 COMB(WF_LBRC, KC_LBRC, KC_W, KC_F)
 COMB(FP_DEL,  KC_DEL,  KC_F, KC_P)
-COMB(WR_CIRC, KC_CIRC, KC_W, KC_R)
-COMB(FS_DQUO, UK_DQUO, KC_F, KC_S)
-COMB(PT_EQL, KC_EQL, KC_P, KC_T)
-COMB(TG_BSLS, UK_BSLS, KC_G, KC_T)
+COMB(AZ_BSLS, UK_BSLS, KC_A, KC_Z)
+COMB(RX_EQL, KC_EQL, KC_R, KC_X)
 COMB(SC_LPRN, KC_LPRN, KC_S, KC_C)
-COMB(TD_DLR, KC_DLR, KC_T, KC_D)
-COMB(RX_GRV, KC_GRV, KC_R, KC_X)
-COMB(ZX_BPIP, ALGR(KC_GRV), KC_Z, KC_X)
+COMB(ZX_BSLS, KC_BSLS, KC_Z, KC_X)
 
 // Num layer
 COMB(O2_MINS, KC_MINS, KC_1, KC_2)
@@ -52,30 +60,43 @@ SUBS(SPCA_are, "are ", SPC_CTL, KC_A)
 SUBS(SPCR_was, "was ", SPC_CTL, KC_R)
 SUBS(SPCS_of, "of ", SPC_CTL, KC_S)
 SUBS(SPCT_the, "the ", SPC_CTL, KC_T)
+SUBS(SPCG_were, "were ", SPC_CTL, KC_G)
+
 SUBS(SPCQ_will, "will ", SPC_CTL, KC_Q)
 SUBS(SPCW_with, "with ", SPC_CTL, KC_W)
 SUBS(SPCF_for, "for ", SPC_CTL, KC_F)
 SUBS(SPCP_to, "to ", SPC_CTL, KC_P)
-SUBS(SPCX_these, "these ", SPC_CTL, KC_X)
+SUBS(SPCT_because, "because ", SPC_CTL, KC_B)
+
 SUBS(SPCZ_those, "those ", SPC_CTL, KC_Z)
+SUBS(SPCX_these, "these ", SPC_CTL, KC_X)
 SUBS(SPCC_this, "this ", SPC_CTL, KC_C)
 SUBS(SPCD_that, "that ", SPC_CTL, KC_D)
-SUBS(SPCT_because, "because ", SPC_CTL, KC_B)
-SUBS(SPCG_were, "were ", SPC_CTL, KC_G)
 SUBS(SPCV_differen, "differen", SPC_CTL, KC_V)
-SUBS(SPCTP_they, "they ", SPC_CTL, KC_T, KC_P)
-SUBS(SPCTD_than, "than ", SPC_CTL, KC_T, KC_D)
+
 SUBS(SPCTG_temp, "temperature ", SPC_CTL, KC_T, KC_G)
 SUBS(SPCWR_between, "between ", SPC_CTL, KC_W, KC_R)
 SUBS(SPCRX_extru, "extru", SPC_CTL, KC_X, KC_R)
 SUBS(SPCFS_well, "well ", SPC_CTL, KC_F, KC_S)
 SUBS(SPCCS_which, "which ", SPC_CTL, KC_C, KC_S)
+SUBS(SPCTP_they, "they ", SPC_CTL, KC_T, KC_P)
+SUBS(SPCTD_than, "than ", SPC_CTL, KC_T, KC_D)
+
+SUBS(SPCAR_how, "how ", KC_SPC, KC_A, KC_R)
+SUBS(SPCST_then, "then ", KC_SPC, KC_S, KC_T)
+SUBS(SPCTG_their, "their", KC_SPC, KC_T, KC_G)
+SUBS(SPC_SC, "what ", KC_SPC, KC_S, KC_C)
+SUBS(SPC_RX, "why", KC_SPC, KC_R, KC_X)
 
 // Space + Right hand
-SUBS(SPCN_ing, "ing ", SPC_CTL, KC_N)
 SUBS(SPCM_ment, "ment ", SPC_CTL, KC_M)
+SUBS(SPCN_ing, "ing ", SPC_CTL, KC_N)
+SUBS(SPCE, "ould ", SPC_CTL, KC_E)
 SUBS(SPCI_tion, "tion ", SPC_CTL, KC_I)
 SUBS(SPCO_nt, "n't ", SPC_CTL, KC_O)
+SUBS(SPCEU, "ough ", SPC_CTL, KC_E, KC_U)
+SUBS(SPCIY, "ight ", SPC_CTL, KC_I, KC_Y)
+
 
 // Bsp + Right Hand
 SUBS(BSPN_and, "and ", BSP_SFT, KC_N)
@@ -98,6 +119,12 @@ SUBS(BSPNM_example, "example ", BSP_SFT, KC_N, KC_M)
 SUBS(BSPIO_been, "been ", BSP_SFT, KC_I, KC_O)
 SUBS(BSPNL_just, "just ", BSP_SFT, KC_N, KC_L)
 SUBS(BSPEY_able, "able ", BSP_SFT, KC_E, KC_U)
+SUBS(BSPCHCOMM_, "having ", BSP_SFT, KC_H, KC_COMM)
+SUBS(BSPC_LN, "please ", BSP_SFT, KC_L, KC_N)
+SUBS(BSPC_EU, "thanks ", BSP_SFT, KC_U, KC_E)
+SUBS(BSPC_ECOMM, "when ", BSP_SFT, KC_E, KC_COMM)
+SUBS(BSPC_IDOT, "which", BSP_SFT, KC_I, KC_DOT)
+
 
 // Bsp & Left hand (Teams and things)
 COMB(BSP_SFTT_M, RCS(KC_M), BSP_SFT, KC_T) //mute

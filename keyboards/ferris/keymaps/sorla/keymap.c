@@ -43,13 +43,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		                            _______, _______, _______, _______ ), */
 
 	[_MATHS] = LAYOUT(
-	      KC_Q,    KC_W,   KC_F,    KC_P,    KC_B, GO_HOME, _______, _______, _______, _______,
+	      KC_Q,    KC_W,   KC_F,    KC_P, GO_HOME, GO_HOME, _______, _______, _______, _______,
 		  KC_8,    KC_6,   KC_2,    KC_0,    KC_G,    KC_M,    KC_3,    KC_1,    KC_7,    KC_9,
 	   _______,    KC_X,   KC_C,    KC_4,    KC_V,    KC_K,    KC_5, KC_COMM,  KC_DOT, KC_SLSH,
 		                         _______, _______, _______, _______ ),
 
 	[_NAV] = LAYOUT(
-	     KC_Q, KC_CAPS,  KC_APP, KC_PSCR,    KC_B, GO_HOME, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,
+	     KC_Q, KC_CAPS,  KC_APP, ALT_TAB, GO_HOME, GO_HOME, KC_HOME, KC_PGDN, KC_PGUP,  KC_END,
 	  _______, _______, _______, _______, OS_RALT, KC_PSCR, KC_LEFT, KC_DOWN,   KC_UP, KC_RGHT,
 	  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_Y),  KC_APP, KC_MUTE, KC_VOLD, KC_VOLU, KC_MPLY,
 		                         _______, _______, _______, _______ ),
@@ -61,15 +61,15 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 		                         _______, _______, _______, _______ ),
 
 	[_MOUSE] = LAYOUT(
-	     KC_Q,    KC_W,    KC_F,    KC_P,    KC_B, GO_HOME, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
+	     KC_Q,    KC_W,    KC_F,    KC_P, GO_HOME, GO_HOME, KC_WH_L, KC_WH_D, KC_WH_U, KC_WH_R,
 	   OS_GUI,  OS_ALT,  OS_SFT,  OS_CTL, OS_RALT, KC_MS_L, KC_MS_L, KC_MS_D, KC_MS_U, KC_MS_R,
 	  C(KC_Z), C(KC_X), C(KC_C), C(KC_V), C(KC_Y),    KC_K, KC_BTN1, KC_BTN2, KC_BTN3, KC_MPLY,
 		                         _______, _______, _______, _______ ),
 
 	[_FUNCTION] = LAYOUT(
-	     _______, _______, _______, _______,   RESET, GO_HOME,  KC_F9,  KC_F10,   KC_F11,  KC_F12,
-	     _______, _______, _______, _______, _______, _______,  KC_F1,   KC_F2,    KC_F3,   KC_F4,
-		 _______, _______, _______, _______, _______, _______,  KC_F5,   KC_F6,    KC_F7,   KC_F8,
+	     _______, _______,   RESET, _______, GO_HOME, GO_HOME,  KC_F9,  KC_F10,   KC_F11,  KC_F12,
+	     _______, _______, _______, _______, _______,  KC_F13,  KC_F1,   KC_F2,    KC_F3,   KC_F4,
+		 _______, _______, _______, _______, _______,  KC_F14,  KC_F5,   KC_F6,    KC_F7,   KC_F8,
 		                            _______, _______, _______, _______ ),
 
 };
