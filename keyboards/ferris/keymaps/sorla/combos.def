@@ -6,10 +6,10 @@ COMB(CD_FUN, MO_FUN, KC_C, KC_D)
 COMB(XC_MOUS, GO_MOUS, KC_X, KC_C)
 
 // From MATHS to NAV
-COMB(G0_GO_NAV, KC_GO_NAV, KC_G, KC_0)
+COMB(G0_GO_NAV, GO_NAV, KC_G, KC_0)
 
 // From NAV to MATHS
-COMB(PSCRLEFT_GO_MATHS, KC_GO_MATHS, KC_PSCR, KC_LEFT)
+COMB(PSCRLEFT_GO_MATHS, GO_MATHS, KC_PSCR, KC_LEFT)
 
 // Home row left hand backspace word and delete
 COMB(BSPSS_CBSP, C(KC_BSPC), BSP_SFT, KC_S)
@@ -97,7 +97,6 @@ SUBS(SPCO_nt, "n't ", SPC_CTL, KC_O)
 SUBS(SPCEU, "ough ", SPC_CTL, KC_E, KC_U)
 SUBS(SPCIY, "ight ", SPC_CTL, KC_I, KC_Y)
 
-
 // Bsp + Right Hand
 SUBS(BSPN_and, "and ", BSP_SFT, KC_N)
 SUBS(BSPE_in, "in ", BSP_SFT, KC_E)
@@ -127,9 +126,9 @@ SUBS(BSPC_IDOT, "which", BSP_SFT, KC_I, KC_DOT)
 
 
 // Bsp & Left hand (Teams and things)
-COMB(BSP_SFTT_M, RCS(KC_M), BSP_SFT, KC_T) //mute
-COMB(BSP_SFTG_K, RCS(KC_K), BSP_SFT, KC_G) //hand
-COMB(BSP_SFTD_H, RCS(KC_H), BSP_SFT, KC_D) //hangup
+COMB(BSPT_M, RCS(KC_M), BSP_SFT, KC_T) //mute
+COMB(BSPG_K, RCS(KC_K), BSP_SFT, KC_G) //hand
+COMB(BSPD_H, RCS(KC_H), BSP_SFT, KC_D) //hangup
 
 
 /* Turning these off, but will redefine on new non-homerow things that are often triggered
