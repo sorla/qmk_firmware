@@ -18,7 +18,7 @@
 #define GO_NUMS TO(_NUMBERS)
 #define GO_NAV TO(_NAV)
 #define GO_FUN  TO(_FUNCTION)
-#define GO_MOUS TO(_MOUSE)
+#define GO_SYMS TO(_SYMS)
 
 // Common shortcuts
 #define CBSP C(KC_BSPC)

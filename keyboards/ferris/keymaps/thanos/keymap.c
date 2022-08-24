@@ -8,7 +8,7 @@ enum ferris_layers {
     _NAV,
     _NUMBERS,
     _FUNCTION,
-    _MOUSE,
+    _SYMS,
 };
 
 
@@ -51,6 +51,13 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 	    KC_F12,  KC_F11,  KC_F10,  KC_F9, GO_NUMS,
 		 KC_F4,   KC_F3,   KC_F2,  KC_F1, GO_HOME,
 	     KC_F8,   KC_F7,   KC_F6,  KC_F5,  GO_NAV,
+		                         _______, _______),
+
+
+	[_SYMS] = SH_LAYOUT(
+	    KC_GRV,   KC_LT, KC_LBRC, KC_LPRN, GO_NUMS,
+	   UK_HASH, KC_SLSH, KC_MINS,  KC_EQL, GO_HOME,
+	   KC_BSLS,   KC_GT, KC_RBRC, KC_RPRN,  GO_NAV,
 		                         _______, _______),
 };
 
