@@ -7,9 +7,8 @@
 #define MATRIX_COLS 4
 
 /* pro_micro pin-out */
-#define MATRIX_ROW_PINS { E6, D7, B3, B1 }
-#define MATRIX_COL_PINS { D3, D2, B2, B6 }
-#define UNUSED_PINS
+#define MATRIX_ROW_PINS { B6, B2, D2, D3 }
+#define MATRIX_COL_PINS { E6, D7, B3, B1 }
 
 /* leds */
 #define JOTPAD16_LEDS
